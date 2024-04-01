@@ -4,6 +4,9 @@ const sockets = require("./socket");
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*"); // to allow cross-origin access
   res.setHeader(
